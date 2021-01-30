@@ -1,8 +1,28 @@
-export const articles = [
+import { ArticleItem } from "./features/step-wizard/article-item/article.models";
+
+export const articles: ArticleItem[] = [
   {
     title: 'PCR - Labortest 08:00 Uhr',
-    info: 'Zusätzliche Laborkosten in Höhe von 59,-€ werden nachträglich in Rechnung gestellt.',
-    price: '39.80',
+    description: 'Zusätzliche Laborkosten in Höhe von 59,-€ werden nachträglich in Rechnung gestellt.',
+    price: 39.80,
+    date: new Date()
+  },
+  {
+    title: 'Blutzucker 08:05 Uhr',
+    description: 'Zusätzliche Laborkosten in Höhe von 59,-€ werden nachträglich in Rechnung gestellt.',
+    price: 20.80,
+    date: new Date()
+  },
+  {
+    title: 'Hormone und Diabetes mellit 09:00 Uhr',
+    description: 'Zusätzliche Laborkosten in Höhe von 59,-€ werden nachträglich in Rechnung gestellt.',
+    price: 21.80,
+    date: new Date()
+  },
+  {
+    title: 'Blutgasanalyse 10:00 Uhr',
+    description: 'Zusätzliche Laborkosten in Höhe von 59,-€ werden nachträglich in Rechnung gestellt.',
+    price: 30.80,
     date: new Date()
   }
 ];
