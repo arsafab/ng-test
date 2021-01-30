@@ -1,13 +1,23 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
+const components = []
 
 @NgModule({
   declarations: [
+    ...components
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
-  providers: []
+  providers: [
+    ...components
+  ],
+  exports: [
+    CommonModule,
+    FormsModule
+  ]
 })
 export class SharedModule { }
