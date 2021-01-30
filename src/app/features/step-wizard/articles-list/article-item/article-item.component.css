@@ -1,12 +1,3 @@
-.article-row {
-  display: flex;
-  margin: 10px 0;
-}
-
-.article-cell {
-  flex: 1;
-}
-
 .article-info {
   min-width: 400px;
 }

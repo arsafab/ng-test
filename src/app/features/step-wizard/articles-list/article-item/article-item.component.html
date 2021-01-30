@@ -1,4 +1,4 @@
-<div class="article-row">
+<div class="article-row article-row">
   <div class="article-cell article-info">
     <h4 class="article-title">{{ article.title | uppercase }}</h4>
     <span class="article-date">
@@ -22,7 +22,7 @@
   </div>
 
   <div class="article-cell article-total">
-    {{ totalPrice | number: '1.0-2' }} Euro
+    <span>{{ totalPrice | number: '1.0-2' }} Euro</span>
   </div>
 </div>
 

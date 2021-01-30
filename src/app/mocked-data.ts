@@ -1,4 +1,4 @@
-import { ArticleItem } from "./features/step-wizard/article-item/article.models";
+import { ArticleItem } from "./features/step-wizard/articles-list/article-item/article.models";
 
 export const articles: ArticleItem[] = [
   {
