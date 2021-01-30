@@ -1,0 +1,29 @@
+<div class="article-row">
+  <div class="article-cell article-info">
+    <h4 class="article-title">{{ article.title | uppercase }}</h4>
+    <span class="article-date">
+      <mat-icon aria-hidden="false" aria-label="Example home icon">calendar_today</mat-icon>
+      {{ article.date | date }}
+    </span>
+    <p class="article-description">{{ article.description }}</p>
+  </div>
+
+  <div class="article-cell article-price">
+    <span>{{ article.price }} Euro</span>
+  </div>
+
+  <div class="article-cell article-number">
+    <input
+      (ngModelChange)="calculatePrice($event)"
+      [(ngModel)]="count"
+      type="number"
+      matInput
+    >
+  </div>
+
+  <div class="article-cell article-total">
+    {{ totalPrice | number: '1.0-2' }} Euro
+  </div>
+</div>
+
+
