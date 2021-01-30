@@ -1,0 +1,25 @@
+<div class="article-row header-row">
+  <div class="article-cell article-header article-info-header"></div>
+
+  <div class="article-cell article-header">
+    <span>Einzelpreis</span>
+  </div>
+
+  <div class="article-cell article-header">
+    <span>Anzahl</span>
+  </div>
+
+  <div class="article-cell article-header">
+    <span>Gesamtpreis</span>
+  </div>
+</div>
+
+<mat-list>
+  <ng-container *ngFor="let item of articles">
+    <mat-divider></mat-divider>
+    <app-article-item
+      [article]="item"
+      mat-list-item
+    ></app-article-item>
+  </ng-container>
+</mat-list>

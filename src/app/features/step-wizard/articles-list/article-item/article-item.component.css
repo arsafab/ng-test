@@ -1,0 +1,40 @@
+.article-info {
+  min-width: 400px;
+}
+
+.article-title {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: -5px;
+}
+
+.article-date {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.article-date .mat-icon {
+  position: relative;
+  top: 3px;
+  font-size: 16px;
+}
+
+.article-price {
+  text-align: center;
+}
+
+.article-number {
+  display: flex;
+  justify-content: center;
+}
+
+.article-number input {
+  width: 40px;
+  height: 20px;
+}
+
+.article-total {
+  text-align: center;
+}

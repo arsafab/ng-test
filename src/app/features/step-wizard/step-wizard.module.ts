@@ -2,21 +2,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { StepWizardComponent } from './step-wizard.component';
-import { MatStepperModule } from '@angular/material/stepper';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ArticlesListComponent } from './articles-list/articles-list.component';
+import { ArticleItemComponent } from './articles-list/article-item/article-item.component';
 
 @NgModule({
   declarations: [
-    StepWizardComponent
+    StepWizardComponent,
+    ArticleItemComponent,
+    ArticlesListComponent
   ],
   imports: [
-    SharedModule,
-    ReactiveFormsModule,
-    MatStepperModule,
-    MatFormFieldModule,
-    MatInputModule
+    SharedModule
   ],
   exports: [
     StepWizardComponent
