@@ -1,7 +1,10 @@
-.mat-stepper-horizontal {
-  margin-top: 8px;
+:host {
+  display: block;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.mat-form-field {
-  margin-top: 16px;
+.accept-block {
+  display: flex;
+  justify-content: flex-end;
 }
