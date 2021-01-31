@@ -1,0 +1,70 @@
+<div class="customer-form">
+  <form [formGroup]="form">
+    <mat-radio-group formControlName="isPrivateCustomer">
+      <mat-radio-button [value]="true">Privatkunde</mat-radio-button>
+      <mat-radio-button [value]="false">Geschäftskunde</mat-radio-button>
+    </mat-radio-group>
+
+    <div class="customer-form-group">
+      <mat-form-field>
+        <mat-label>Vorname</mat-label>
+        <input matInput formControlName="firstName">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Nachname</mat-label>
+        <input matInput formControlName="lastName">
+      </mat-form-field>
+    </div>
+
+    <div class="customer-form-group">
+      <mat-form-field>
+        <mat-label>Straße</mat-label>
+        <input matInput formControlName="street">
+      </mat-form-field>
+      <mat-form-field style="width: 200px">
+        <mat-label>Hausnummer</mat-label>
+        <input matInput formControlName="houseNumber">
+      </mat-form-field>
+    </div>
+
+    <div class="customer-form-group">
+      <mat-form-field style="width: 200px">
+        <mat-label>PLZ</mat-label>
+        <input matInput formControlName="zip">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Stadt</mat-label>
+        <input matInput formControlName="city">
+      </mat-form-field>
+    </div>
+
+    <div class="customer-form-group">
+      <mat-form-field>
+        <mat-label>Land</mat-label>
+        <mat-select formControlName="federalState">
+          <mat-option *ngFor="let state of federalStates" [value]="state">{{ state }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="customer-form-group">
+      <mat-form-field>
+        <mat-label>E-Mail</mat-label>
+        <input matInput type="email" formControlName="email">
+      </mat-form-field>
+    </div>
+
+    <div class="customer-form-group">
+      <mat-form-field>
+        <mat-label>E-mail wiederholen</mat-label>
+        <input matInput type="email" formControlName="repeatedEmail">
+      </mat-form-field>
+    </div>
+
+    <div class="customer-checkboxes-group">
+      <mat-checkbox formControlName="isUseTermsChecked">Ich akzeptiere die <span>Datenshutzerklärung</span> und die <span>Nutzungsbedingungen für Ticketkäufer.</span></mat-checkbox>
+      <mat-checkbox formControlName="isApprovalTermsChecked">Ich akzeptiere die <span>Einwilligungserklärung zum Online Abruf meines Testergebnisses.</span></mat-checkbox>
+      <mat-checkbox formControlName="isContractTermsChecked">Ich willige ein, dass mein Widerrufsrecht vorzeitig erlisht, wenn ticket.io mit der Vertragserfüllung vor Ende der Widerrufsfrist beginnt und ich dieses bei vollständiger Vertragserfällung verliere.</mat-checkbox>
+    </div>
+  </form>
+</div>

@@ -9,6 +9,9 @@ import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatSelectModule } from '@angular/material/select';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 const components = [];
 const modules = [
@@ -21,8 +24,11 @@ const modules = [
   MatListModule,
   MatIconModule,
   MatDividerModule,
-  MatButtonModule
-]
+  MatButtonModule,
+  MatRadioModule,
+  MatSelectModule,
+  MatCheckboxModule
+];
 
 @NgModule({
   declarations: [

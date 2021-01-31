@@ -8,6 +8,11 @@
   </mat-step>
   <mat-step>
     <ng-template matStepLabel>Formular füllen</ng-template>
+    <app-customer-form (valid)="isFormFilled = $event"></app-customer-form>
+    <div class="accept-block">
+      <button color="primary" mat-button matStepperPrevious>Back</button>
+      <button color="accent" mat-button matStepperNext [disabled]="!isFormFilled">Next</button>
+    </div>
   </mat-step>
   <mat-step>
     <ng-template matStepLabel>Bestellübersicht</ng-template>
