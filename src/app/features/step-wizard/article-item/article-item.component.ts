@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ArticleItem } from './article.models';
+import { IArticleItem } from 'src/app/shared/models';
 
 @Component({
   selector: 'app-article-item',
@@ -7,7 +7,7 @@ import { ArticleItem } from './article.models';
   styleUrls: ['./article-item.component.css']
 })
 export class ArticleItemComponent {
-  @Input() public readonly article: ArticleItem;
+  @Input() public readonly article: IArticleItem;
   public totalPrice = 0;
   public count: number;
 
