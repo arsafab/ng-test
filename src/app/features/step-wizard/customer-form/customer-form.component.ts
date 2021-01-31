@@ -1,7 +1,8 @@
 import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { FederalStates } from 'src/app/shared/constants';
+import { StepWizardService } from 'src/app/core/services/step-wizard.service';
 
 @Component({
   selector: 'app-customer-form',
@@ -15,7 +16,10 @@ export class CustomerFormComponent implements OnInit, OnDestroy {
 
   private readonly subscriptions: Subscription = new Subscription();
 
-  constructor(private readonly formBuilder: FormBuilder) {}
+  constructor(
+    private readonly formBuilder: FormBuilder,
+    private readonly stepWizardService: StepWizardService
+  ) {}
 
   public ngOnInit(): void {
     this.form = this.formBuilder.group({
@@ -37,6 +41,7 @@ export class CustomerFormComponent implements OnInit, OnDestroy {
     this.subscriptions.add(
       this.form.valueChanges.subscribe(changes => {
         this.valid.emit(this.form.valid);
+        this.stepWizardService.setCustomerInfo(changes);
       })
     );
   }

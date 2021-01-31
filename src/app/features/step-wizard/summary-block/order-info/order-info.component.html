@@ -8,10 +8,10 @@
   </div>
 
   <div class="table-cell order-price">
-    <span>{{ order.count }} x {{ order.price }} Euro</span>
+    <span>{{ order.count }} x {{ order.price | number: '1.0-2' }} Euro</span>
   </div>
 
   <div class="table-cell order-total">
-    <span>{{ order.count * order.price }} Euro</span>
+    <span>{{ (order.count * order.price) | number: '1.0-2' }} Euro</span>
   </div>
 </div>

@@ -19,6 +19,7 @@
     <mat-divider></mat-divider>
     <app-article-item
       [article]="item"
+      (orderChanged)="updateOrderInfo($event)"
       mat-list-item
     ></app-article-item>
   </ng-container>
