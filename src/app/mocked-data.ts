@@ -1,6 +1,6 @@
-import { ArticleItem } from "./features/step-wizard/articles-list/article-item/article.models";
+import { IArticleItem } from './shared/models';
 
-export const articles: ArticleItem[] = [
+export const articles: IArticleItem[] = [
   {
     title: 'PCR - Labortest 08:00 Uhr',
     description: 'Zusätzliche Laborkosten in Höhe von 59,-€ werden nachträglich in Rechnung gestellt.',
