@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { StepWizardService } from 'src/app/core/services/step-wizard.service';
 import { ICustomerInfo, IOrderItem } from 'src/app/shared/models';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-summary-block',
@@ -16,6 +17,9 @@ export class SummaryBlockComponent implements OnInit {
 
   public ngOnInit(): void {
     this.customerInfo$ = this.stepWizardService.getCustomerInfo();
-    this.orderInfo$ = this.stepWizardService.getOrderInfo();
+    this.orderInfo$ = this.stepWizardService.getOrderInfo()
+      .pipe(
+        map(data => data.filter(item => item.count > 0))
+      );
   }
 }

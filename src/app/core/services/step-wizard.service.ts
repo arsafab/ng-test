@@ -7,37 +7,8 @@ import { IOrderItem, ICustomerInfo } from 'src/app/shared/models';
   providedIn: 'root',
 })
 export class StepWizardService {
-  private readonly customerInfo: BehaviorSubject<ICustomerInfo> = new BehaviorSubject(null);
-  private readonly orderInfo: BehaviorSubject<IOrderItem[]> = new BehaviorSubject(null);
-
-  constructor() {
-    // TODO: temporary solution for building summary block layout
-    this.setCustomerInfo({
-      isPrivateCustomer: true,
-      isUseTermsChecked: true,
-      isApprovalTermsChecked: true,
-      isContractTermsChecked: true,
-      email: 'test@gmail.com',
-      repeatedEmail: 'test@gmail.com',
-      firstName: 'test',
-      lastName: 'test',
-      street: 'test',
-      houseNumber: 'test',
-      city: 'test',
-      zip: 'test',
-      federalState: 'test'
-    });
-    this.setOrderInfo([
-      {
-        articleId: '1',
-        count: 2,
-        price: 32.80,
-        date: new Date(),
-        description: '',
-        title: 'Test'
-      }
-    ]);
-  }
+  private readonly customerInfo: BehaviorSubject<ICustomerInfo> = new BehaviorSubject({} as ICustomerInfo);
+  private readonly orderInfo: BehaviorSubject<IOrderItem[]> = new BehaviorSubject([]);
 
   public getCustomerInfo(): Observable<ICustomerInfo> {
     return this.customerInfo.asObservable();
@@ -53,5 +24,13 @@ export class StepWizardService {
 
   public setOrderInfo(data: IOrderItem[]): void {
     this.orderInfo.next(data);
+  }
+
+  public updateOrderById(data: IOrderItem): void {
+    const store = this.orderInfo.getValue();
+    const founded = store.find(item => item.articleId === data.articleId);
+
+    founded ? Object.assign(founded, data) : store.push(data);
+    this.orderInfo.next(store);
   }
 }

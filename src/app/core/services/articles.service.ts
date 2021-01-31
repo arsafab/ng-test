@@ -7,7 +7,7 @@ import { IArticleItem } from 'src/app/shared/models';
   providedIn: 'root',
 })
 export class ArticlesService {
-  private readonly articles: BehaviorSubject<IArticleItem[]> = new BehaviorSubject(null);
+  private readonly articles: BehaviorSubject<IArticleItem[]> = new BehaviorSubject([]);
 
   constructor() {
     // TODO: Temporary solution for mocked data
@@ -18,7 +18,7 @@ export class ArticlesService {
     return this.articles.asObservable();
   }
 
-  public setArticles(articles: IArticleItem[]): void {
-    this.articles.next(articles);
+  public setArticles(data: IArticleItem[]): void {
+    this.articles.next(data);
   }
 }
