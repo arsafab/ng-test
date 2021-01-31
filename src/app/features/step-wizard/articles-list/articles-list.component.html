@@ -15,7 +15,7 @@
 </div>
 
 <mat-list>
-  <ng-container *ngFor="let item of articles">
+  <ng-container *ngFor="let item of articles$ | async">
     <mat-divider></mat-divider>
     <app-article-item
       [article]="item"
