@@ -1,1 +1,29 @@
-works
+<div class="summary-block">
+  <div class="table-row header-row">
+    <div class="table-cell table-header-cell table-info-cell ">
+      <span>Ticket</span>
+    </div>
+
+    <div class="table-cell table-header-cell">
+      <span>Preis</span>
+    </div>
+
+    <div class="table-cell table-header-cell">
+      <span>Gesamtpreis</span>
+    </div>
+  </div>
+
+  <mat-list>
+    <ng-container *ngFor="let item of orderInfo$ | async">
+      <mat-divider></mat-divider>
+        <app-order-info
+          [order]="item"
+          mat-list-item
+        ></app-order-info>
+    </ng-container>
+  </mat-list>
+
+  <div class="customer-info">
+    <app-customer-info [customer]="customerInfo$ | async"></app-customer-info>
+  </div>
+</div>

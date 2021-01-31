@@ -1,17 +1,32 @@
 import { Injectable } from '@angular/core';
+import { getMaxListeners } from 'process';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { IOrderItem, CustomerInfo } from 'src/app/shared/models';
+import { IOrderItem, ICustomerInfo } from 'src/app/shared/models';
 
 @Injectable({
   providedIn: 'root',
 })
 export class StepWizardService {
-  private readonly customerInfo: BehaviorSubject<CustomerInfo> = new BehaviorSubject(null);
+  private readonly customerInfo: BehaviorSubject<ICustomerInfo> = new BehaviorSubject(null);
   private readonly orderInfo: BehaviorSubject<IOrderItem[]> = new BehaviorSubject(null);
 
   constructor() {
     // TODO: temporary solution for building summary block layout
-    this.setCustomerInfo({} as CustomerInfo);
+    this.setCustomerInfo({
+      isPrivateCustomer: true,
+      isUseTermsChecked: true,
+      isApprovalTermsChecked: true,
+      isContractTermsChecked: true,
+      email: 'test@gmail.com',
+      repeatedEmail: 'test@gmail.com',
+      firstName: 'test',
+      lastName: 'test',
+      street: 'test',
+      houseNumber: 'test',
+      city: 'test',
+      zip: 'test',
+      federalState: 'test'
+    });
     this.setOrderInfo([
       {
         articleId: '1',
@@ -24,7 +39,7 @@ export class StepWizardService {
     ]);
   }
 
-  public getCustomerInfo(): Observable<CustomerInfo> {
+  public getCustomerInfo(): Observable<ICustomerInfo> {
     return this.customerInfo.asObservable();
   }
 
@@ -32,7 +47,7 @@ export class StepWizardService {
     return this.orderInfo.asObservable();
   }
 
-  public setCustomerInfo(data: CustomerInfo): void {
+  public setCustomerInfo(data: ICustomerInfo): void {
     this.customerInfo.next(data);
   }
 
