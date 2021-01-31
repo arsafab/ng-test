@@ -1,21 +1,21 @@
-<div class="article-row header-row">
-  <div class="article-cell article-header article-info-header"></div>
+<div class="table-row header-row">
+  <div class="table-cell table-info-cell table-header-cell"></div>
 
-  <div class="article-cell article-header">
+  <div class="table-cell table-header-cell">
     <span>Einzelpreis</span>
   </div>
 
-  <div class="article-cell article-header">
+  <div class="table-cell table-header-cell">
     <span>Anzahl</span>
   </div>
 
-  <div class="article-cell article-header">
+  <div class="table-cell table-header-cell">
     <span>Gesamtpreis</span>
   </div>
 </div>
 
 <mat-list>
-  <ng-container *ngFor="let item of articles">
+  <ng-container *ngFor="let item of articles$ | async">
     <mat-divider></mat-divider>
     <app-article-item
       [article]="item"

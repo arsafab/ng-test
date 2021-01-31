@@ -8,3 +8,28 @@
   display: flex;
   justify-content: flex-end;
 }
+
+::ng-deep .table-row {
+  display: flex;
+  margin: 10px 0;
+}
+
+::ng-deep .table-cell {
+  flex: 1;
+}
+
+::ng-deep .table-header-cell {
+  font-weight: bold;
+}
+
+::ng-deep .table-row {
+  margin-bottom: -5px;
+}
+
+::ng-deep .table-info-cell {
+  min-width: 400px;
+}
+
+::ng-deep .mat-horizontal-content-container {
+  padding: 0 !important;
+}
